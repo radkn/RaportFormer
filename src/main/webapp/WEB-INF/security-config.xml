@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="userdataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        &lt;!&ndash;<property name="driverClassName" value="${driver}"/>&ndash;&gt;
+        <property name="url" value="${url_user}"/>
+        <property name="username" value="${username_user}"/>
+        <property name="password" value="${password_user}"/>
+    </bean>
+
+    <bean id="userSF" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="userdataSource"/>
+        <property name="packagesToScan" value="org.refrap.model"/>
+        <property name="mappingResources">
+            <list>
+                <value>orm/User.hbm.xml</value>
+                <value>orm/UserRoles.hbm.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>-->
+
+
+</beans>

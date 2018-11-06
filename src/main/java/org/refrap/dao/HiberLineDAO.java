@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.refrap.model.Line;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
@@ -14,6 +15,7 @@ import java.util.List;
 public class HiberLineDAO implements ILineDAO {
 
     @Autowired
+//    @Qualifier("dataSF")
     private SessionFactory sessionFactory;
 
     private Session curentSession(){

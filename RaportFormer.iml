@@ -4,7 +4,8 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="noname-pesistence-config.xml@805" />
+          <unit-entry name="dataSF" value="31bdcf58-3ed2-4fe8-ab17-ac65032740a8" />
+          <unit-entry name="userSF" value="9807865a-2d01-442a-8272-4caf720694c3" />
         </datasource-map>
         <naming-strategy-map />
       </configuration>
