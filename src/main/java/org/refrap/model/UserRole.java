@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 
 public class UserRole {
     private Integer userRoleId;
+    private User user;
+    private String role;
 
     public Integer getUserRoleId() {
         return userRoleId;
@@ -30,6 +32,4 @@ public class UserRole {
         this.role = role;
     }
 
-    private User user;
-    private String role;
 }

@@ -14,8 +14,7 @@ import java.util.List;
 @Component
 public class HiberLineDAO implements ILineDAO {
 
-    @Autowired
-//    @Qualifier("dataSF")
+    @Autowired(required = false)
     private SessionFactory sessionFactory;
 
     private Session curentSession(){

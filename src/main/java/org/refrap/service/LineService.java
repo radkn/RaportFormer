@@ -16,7 +16,7 @@ import java.util.Map;
 @Transactional(readOnly = true)
 public class LineService implements ILineService {
 
-    @Autowired
+    @Autowired(required = false)
     public ILineDAO lineDAO;
 
     @Override

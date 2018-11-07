@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!--    <bean id="userdataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        &lt;!&ndash;<property name="driverClassName" value="${driver}"/>&ndash;&gt;
+        <property name="driverClassName" value="${driver}"/>
         <property name="url" value="${url_user}"/>
         <property name="username" value="${username_user}"/>
         <property name="password" value="${password_user}"/>
@@ -26,5 +26,17 @@
         </property>
     </bean>-->
 
+    <bean id="userDao" class="org.refrap.dao.HiberUserDAO">
+        <property name="sessionFactory" ref="dataSF"/>
+    </bean>
 
+    <bean id="userService" class="org.refrap.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <!-- MUST have transaction manager, using aop and aspects  -->
+<!--    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="userSF"></property>
+    </bean>-->
 </beans>

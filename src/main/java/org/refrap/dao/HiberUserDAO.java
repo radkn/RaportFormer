@@ -9,17 +9,18 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+//@Component
 public class HiberUserDAO implements IUserDAO{
 
-//    @Autowired
-//    @Qualifier("userSF")
+/*    @Autowired
+    @Qualifier("userSF")*/
     private SessionFactory sessionFactory;
 
     @Override
+    @SuppressWarnings("unchecked")
     public User findByUserName(String username) {
         List<User> users = new ArrayList<User>();
-        users = sessionFactory.getCurrentSession()
+        users = getSessionFactory().getCurrentSession()
                 .createQuery("from User where username=?")
                 .setParameter(0,username)
                 .list();
@@ -29,6 +30,14 @@ public class HiberUserDAO implements IUserDAO{
         }else {
             return null;
         }
+    }
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
 

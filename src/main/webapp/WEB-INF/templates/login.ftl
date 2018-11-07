@@ -41,7 +41,7 @@
 
     <h3>Login with Username and Password</h3>
     <form name='loginForm'
-          action="/login" method='POST'>
+          action="/j_spring_security_check" method='POST'>
 
         <table>
             <tr>

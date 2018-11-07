@@ -1,8 +1,10 @@
 package org.refrap.service;
 
 import org.refrap.dao.HiberUserDAO;
+import org.refrap.dao.IUserDAO;
 import org.refrap.model.UserRole;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -15,11 +17,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Service
+@Service("userService")
 public class UserService implements UserDetailsService {
 
-    @Autowired
-    private HiberUserDAO userDAO;
+/*    @Autowired
+    @Qualifier("userDao")*/
+    private IUserDAO userDAO;
 
     @Override
     public UserDetails loadUserByUsername(String username) {
@@ -52,11 +55,11 @@ public class UserService implements UserDetailsService {
         return result;
     }
 
-    public HiberUserDAO getUserDao() {
+    public IUserDAO getUserDao() {
         return userDAO;
     }
 
-    public void setUserDao(HiberUserDAO userDAO) {
+    public void setUserDao(IUserDAO userDAO) {
         this.userDAO = userDAO;
     }
 

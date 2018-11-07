@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="org.refrap.model.User" table="users">
+    <class name="org.refrap.model.User" table="users" schema="intertop">
         <id name="username" type="string">
             <column name="username" length="45"/>
             <generator class="assigned"/>
@@ -13,7 +13,7 @@
         <property name="enabled" type="boolean">
             <column name="enabled" not-null="true"/>
         </property>
-        <set name="userRole">
+        <set name="userRole" table="user_roles" inverse="true" lazy="true" fetch="select">
             <key><column name="username" length="45" not-null="true"/> </key>
             <one-to-many class="org.refrap.model.UserRole"/>
         </set>
