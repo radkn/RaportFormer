@@ -36,13 +36,13 @@ public class HiberLineDAO implements ILineDAO {
     }
 
     @Override
-    public List<Line> findByTitleDateStatus(String lineTitle, Timestamp dtStart, Timestamp dtEnd, int status) {
+    public List<Line> findByTitleDateStatus( String lineTitle, Timestamp dtStart, Timestamp dtEnd, int status) {
         return curentSession().createQuery("FROM Line where lineTitle='"+lineTitle+"'" +
                 " and  datetime>='"+dtStart+"' and datetime<'"+dtEnd+"' and status="+status).list();
     }
 
     @Override
-    public Long getCountByTitleDateStatus(String lineTitle, Timestamp dtStart, Timestamp dtEnd, int status) {
+    public Long getCountByTitleDateStatus(String scene_id, String lineTitle, Timestamp dtStart, Timestamp dtEnd, int status) {
 /*        Query q = curentSession().createQuery("select count (*) FROM Line where lineTitle= :lineTitle" +
                 " and  datetime>= :start and datetime< :end and status= :status");
         q.setParameter("lineTitle", lineTitle);

@@ -16,7 +16,7 @@ public interface ILineService {
 
     List<Line> getByTitleAndDate(String lineTitle, String date, int timeStart, int timeEnd, String status);
 
-    Map<String, Integer> getCountByTitleAndDate(String lineTitle, String date, int timeStart, int timeEnd, String status);
+    Map<String, Integer> getCountByTitleAndDate(String scene, String lineTitle, String date, int timeStart, int timeEnd, String status);
 
     List<String> getAllData();
 }

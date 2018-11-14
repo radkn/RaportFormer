@@ -12,7 +12,7 @@ public interface ILineDAO {
 
     List<Line> getLineBySceneId(String sceneId);
     List<Line> findByTitleDateStatus(String lineTitle, Timestamp dtStart, Timestamp dtEnd, int status);
-    Long getCountByTitleDateStatus(String lineTitle, Timestamp dtStart, Timestamp dtEnd, int status);
+    Long getCountByTitleDateStatus(String scene_id, String lineTitle, Timestamp dtStart, Timestamp dtEnd, int status);
 
     List<Line> getAllData();
 

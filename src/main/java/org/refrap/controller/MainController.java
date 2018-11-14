@@ -35,20 +35,23 @@ public class MainController {
     public String line(@RequestParam(value = "scene") String scene, Model model){
         model.addAttribute("lines", lineService.getLineBySceneid(scene));
         model.addAttribute("dates", lineService.getAllData());
+        model.addAttribute("scene", scene);
         return "/testLineGetter";
     }
 
     @PostMapping("/lines/bytitledate")
     public String getLineByTitleAndDate(Model model,
+                                        @RequestParam("scene") String scene,
                                         @RequestParam("lineTitle") String lineTitle,
                                         @RequestParam("status") String status,
                                         @RequestParam("date") String date,
                                         @RequestParam("timeStart") String timeStart,
                                         @RequestParam("timeEnd") String timeEnd){
 
+        model.addAttribute("scene", scene);
         model.addAttribute("lines", lineService.getAllLineName());
         model.addAttribute("dates", lineService.getAllData());
-        model.addAttribute("count", lineService.getCountByTitleAndDate(lineTitle, date,
+        model.addAttribute("count", lineService.getCountByTitleAndDate(scene, lineTitle, date,
                 Integer.parseInt(timeStart), Integer.parseInt(timeEnd), status));
 
         return "/linesList";

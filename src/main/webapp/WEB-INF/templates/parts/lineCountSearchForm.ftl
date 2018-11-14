@@ -7,7 +7,9 @@
         <#else>
             Not found any line
         </#list>
+
         </select>
+        <input name="scene" type="hidden" value=${scene}/>
 
         <select name="status">
             <option>in</option>
